@@ -43,7 +43,8 @@ export class RegisterComponent {
       },2500)
       this.utils.showToastSuccess('Acceso correcto', "Redirigiendo al listado de Usuarios");
     }).catch((err)=> {
-      this.utils.showToastWarning("Error!", "No ha sido posible acceder.");
+      let msg = err.error.message ? err.error.message : "No ha sido posible acceder.";
+      this.utils.showToastWarning("Error!", msg);
     }).finally(()=> {
     })
   }
