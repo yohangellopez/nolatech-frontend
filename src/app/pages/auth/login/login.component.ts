@@ -20,8 +20,8 @@ export class LoginComponent {
     private router: Router
   ) {
     this.form = this.formBuilder.group({
-      usuario:[environment.usuario, Validators.required],
-      password :[environment.password, Validators.required],
+      usuario:['', Validators.required],
+      password :['', Validators.required],
     });
   }
 
@@ -30,20 +30,14 @@ export class LoginComponent {
     this.api.post('/auth/login', this.form.value).then((res:any)=> {
       // this.storageService.setItem('authData', res.data);
       this.storageService.setItem('authData', {
-        nombre: res.data.nombre,
-        corte: res.data.corte,
-        tipo: res.data.tipo,
+        name: res.data.name,
+        lastname: res.data.lastname,
         token: res.token
       });
-      if(res.data.corte.length != 0){
-        setTimeout(() => {
-          this.router.navigateByUrl('/home')
-        },2500)
-        this.utils.showToastSuccess('Acceso correcto', "Redirigiendo al punto de venta");
-      }else{
-        this.router.navigateByUrl('/auth/seleccionar-caja')
-        this.utils.showToastSuccess('Acceso correcto', "Redirigiendo a seleccionar una caja");
-      }
+      setTimeout(() => {
+        this.router.navigateByUrl('/home')
+      },2500)
+      this.utils.showToastSuccess('Acceso correcto', "Redirigiendo al listado de Usuarios");
 
     }).catch((err)=> {
       console.log(err);
