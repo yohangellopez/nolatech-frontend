@@ -46,4 +46,8 @@ export class LoginComponent {
       // pcultar spinner
     })
   }
+
+  navigateRegister() {
+    this.router.navigate(['/auth/register']);
+  }
 }

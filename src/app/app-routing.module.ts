@@ -9,15 +9,18 @@ const routes: Routes = [
   {
     path:'home',
     canActivate: [AuthGuard],
-    component: HomeComponent
+    component: HomeComponent,
+    data: { name: 'home' }
   },
   {
     path:'auth/login',
-    component: LoginComponent
+    component: LoginComponent,
+    data: { name: 'login' }
   },
   {
     path:'auth/register',
-    component: RegisterComponent
+    component: RegisterComponent,
+    data: { name: 'register' }
   },
   {
     path:'**',
