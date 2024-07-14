@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import * as moment from 'moment';
 import { StorageService } from 'src/app/shared/storage.service';
 import { UtilsService } from 'src/app/shared/utils.service';
 declare var $: any; // Agrega esta línea
@@ -20,7 +19,6 @@ export class NavbarComponent {
      this.storageService.getItem('authData').subscribe((res:any)=> {
         this.nombreAutenticado = res.name + ' ' + res.lastname;
       })
-      this.fecha = moment().format('DD/MM/YYYY');
    }
 
   salir() {
