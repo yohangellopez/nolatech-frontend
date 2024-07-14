@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    api: "http://localhost:8080",
+    api: "https://nolatech-api.onrender.com",
     usuario: '',
     password: ''
 }
