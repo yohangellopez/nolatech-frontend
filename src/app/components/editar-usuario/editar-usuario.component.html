@@ -1,0 +1,47 @@
+<div class="modal fade" #editarUsuario id="editar-usuario" tabindex="-1" role="dialog" aria-labelledby="editar-usuario-label" aria-hidden="true">
+    <div class="modal-dialog modal-lg h-75" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editar-usuario-label">Editar Usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <form [formGroup]="form">
+                        <div class="form-group">
+                            <label position="floating">Nombre de usuario</label>
+                            <input class="form-control" formControlName="username" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label position="floating">Nombre</label>
+                            <input class="form-control" formControlName="name" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label position="floating">Apellido</label>
+                            <input class="form-control" formControlName="lastname" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label position="floating">Password</label>
+                            <input formControlName="password" class="form-control" type="password" autocomplete="new-password">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer text-center justify-content-center">
+            <button
+                type="button"
+                class="btn btn-success"
+                (click)="update()"
+                >
+                <i class="fa fa-undo"></i> Actualizar
+            </button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Cancelar</button>
+        </div>
+      </div>
+    </div>
+</div>
+

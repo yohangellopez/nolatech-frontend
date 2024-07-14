@@ -1,0 +1,66 @@
+<div id="pos" class="container-fluid p-0 app-admin-wrap layout-sidebar-large clearfix">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-order">
+        <div class="pb-0 pt-0">
+          <app-navbar></app-navbar>
+          <form class="">
+            <div class="card-body pt-1">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="pos-detail">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th width="10%" scope="col">Código</th>
+                            <th width="25%" scope="col">Usuario</th>
+                            <th width="20%" scope="col">Nombre</th>
+                            <th width="20%" scope="col">Apellido</th>
+                            <th width="20%" scope="col">Email</th>
+                            <th width="5%" scope="col">Acciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let user of usuarios">
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.lastname }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>
+                              <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editar-usuario" (click)="editarUser(user)">
+                                <i class="fa fa-edit"></i>
+                              </button>
+                              <button class="ml-1 btn btn-sm btn-danger" (click)="eliminarUsuario($event,user.id)">
+                                <i class="fa fa-trash"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr *ngIf="usuarios.length === 0">
+                            <td colspan="6">No hay usuarios agregados</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer d-flex justify-content-end">
+                <button (click)="prevPage()" [disabled]="page === 1" class="btn btn-primary mr-2">
+                  <i class="fas fa-chevron-left"></i> 
+                </button>
+                <button (click)="nextPage()" [disabled]="page === totalPages" class="btn btn-primary">
+                   <i class="fas fa-chevron-right"></i>
+                </button>
+                <p class="ml-3 my-auto">Página {{ page }} de {{ totalPages }}</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-editar-usuario></app-editar-usuario>

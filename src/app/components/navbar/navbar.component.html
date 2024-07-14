@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img
+        src="assets/logo.png"
+        alt=""
+        width="35"
+        height="35"
+      /> NOLATECH</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+        <li class="nav-link float-right" (click)="salir()" style="cursor: pointer;">
+          Cerrar sesion
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-text d-flex text-center">
+      <b>Fecha:</b> {{ fecha }} &nbsp;&nbsp;<b>{{ nombreAutenticado }}</b>
+      </div>
+  </div>
+
+</nav>
