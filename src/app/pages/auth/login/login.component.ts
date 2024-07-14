@@ -20,7 +20,7 @@ export class LoginComponent {
     private router: Router
   ) {
     this.form = this.formBuilder.group({
-      usuario:['', Validators.required],
+      email:['', Validators.required],
       password :['', Validators.required],
     });
   }
