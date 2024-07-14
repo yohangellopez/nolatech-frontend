@@ -32,6 +32,8 @@
     "bootbox": "^5.5.3",
     "bootstrap": "^4.4.0",
     "jquery": "^3.7.1",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.34",
     "ngx-spinner": "^16.0.2",
     "ngx-toastr": "^17.0.2",
     "popper": "^1.0.1",
