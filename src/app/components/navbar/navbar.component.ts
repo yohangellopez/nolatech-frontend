@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { StorageService } from 'src/app/shared/storage.service';
 import { UtilsService } from 'src/app/shared/utils.service';
 declare var $: any; // Agrega esta línea
@@ -14,6 +15,7 @@ export class NavbarComponent {
    constructor(
     private utils: UtilsService,
     private storageService: StorageService,
+    private router: Router
    ) {
      // escucha los cambios y dispara el evento para actualizar la avriable
      this.storageService.getItem('authData').subscribe((res:any)=> {
@@ -36,7 +38,7 @@ export class NavbarComponent {
       callback: (result:any) => {
         if (result) {
           this.utils.clearStorage();
-          window.location.href = '/login';
+          this.router.navigate(['/auth/login']);
         }
       }
     });
